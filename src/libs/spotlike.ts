@@ -25,7 +25,7 @@ export default class Spotlike {
             {
               name: 'Update apt packages',
               type: 'Command',
-              command: `xterm -hold -e "sudo nala update"`
+              command: `xterm -hold -e "sudo apt update"`
             }
           ]
         }
@@ -38,7 +38,7 @@ export default class Spotlike {
         {
           name: 'Search for a web address',
           type: 'Web',
-          command: `zen-specific.AppImage ${search}`
+          command: `open ${search}`
         }
       ]
     } else if (match.calc(search)) {
@@ -56,10 +56,7 @@ export default class Spotlike {
         {
           name: 'Search something on the web',
           type: 'Web',
-          command: `zen-specific.AppImage https://google.com/search?q=${search.replaceAll(
-            ' ',
-            '+'
-          )}`
+          command: `open https://google.com/search?q=${search.replaceAll(' ', '+')}`
         }
       ]
     }
